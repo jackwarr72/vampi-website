@@ -1,0 +1,14 @@
+# Dependencies
+node_modules/
+
+# Build outputs
+public/
+
+# Environment
+.env
+
+# IDE
+.vscode/
+*.swp
+*.swo
+*~
