@@ -70,10 +70,6 @@ const js = minifyJS(fs.readFileSync(path.join(ROOT, SRC, 'app.js'), 'utf8'));
 
 const out = html
   .replace(/<link rel="stylesheet" href="style\.css">/, `<style>${css}</style>`)
-  .replace(/<script src="vendor\/gsap\.min\.js"><\/script>/,
-    `<script>${minifyJS(fs.readFileSync(path.join(ROOT, SRC, 'vendor', 'gsap.min.js'), 'utf8'))}</script>`)
-  .replace(/<script src="vendor\/ScrollTrigger\.min\.js"><\/script>/,
-    `<script>${minifyJS(fs.readFileSync(path.join(ROOT, SRC, 'vendor', 'ScrollTrigger.min.js'), 'utf8'))}</script>`)
   .replace(/<script src="app\.js"><\/script>/, `<script>${js}</script>`);
 
 fs.writeFileSync(path.join(ROOT, DIST, 'index.html'), out);
